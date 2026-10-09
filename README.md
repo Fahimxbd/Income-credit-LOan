@@ -6,7 +6,9 @@ A beginner-friendly loan-rule exercise transformed into a responsive website. Th
 
 ## Live Cloudflare Workers website
 
-**Deployment not verified yet.** The repository is Cloudflare-ready; add the *actual* Cloudflare Workers URL here after a successful deployment. No URL is invented.
+**Cloudflare Workers website:** [**Open Income & Credit Loan →**](https://income-credit-loan.fahimprivateuser-d8a.workers.dev/)
+
+Direct URL: https://income-credit-loan.fahimprivateuser-d8a.workers.dev/
 
 ## Features
 
