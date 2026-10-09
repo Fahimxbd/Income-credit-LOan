@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071321">
+  <meta name="description" content="Explore a beginner-friendly loan income and demo credit-score rule checker. A free, private educational project built with Python and Cloudflare Workers static assets. Not a real loan approval.">
+  <meta property="og:title" content="Income & Credit Loan — Educational Eligibility Checker">
+  <meta property="og:description" content="Explore example income and credit-score conditions in a clear and private learning tool.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js"></script>
+  <title>Income & Credit | Educational Loan Checker</title>
+</head>
+<body>
+  <div class="backdrop-glow glow-one" aria-hidden="true"></div><div class="backdrop-glow glow-two" aria-hidden="true"></div>
+  <header class="site-header container">
+    <a href="/" class="logo" aria-label="Income and Credit home"><span class="logo-symbol"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="4" stroke="currentColor" stroke-width="1.8"/><path d="M7 15l3.4-3.4 2.6 2.2L17.5 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>income<span class="brand-accent">.</span>credit</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#calculator">Calculator</a><a href="#how-it-works">How it works</a>
+      <a class="github-link" href="https://github.com/Fahimxbd/Income-credit-LOan" target="_blank" rel="noopener noreferrer">Source code ↗</a>
+    </nav>
+    <button class="theme-switch" type="button" id="theme-toggle" aria-label="Switch to light mode" title="Toggle theme">☀</button>
+  </header>
+  <main class="container">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-line"></span> FINANCIAL LOGIC, MADE SIMPLE</div>
+        <h1>Know the rules.<br><span>Understand the result.</span></h1>
+        <p>Explore how income and a custom credit-score rule work together, through a simple interactive educational example.</p>
+        <div class="hero-tags"><span>✓ Open-source project</span><span>✓ Browser-based</span><span>✓ No data collection</span></div>
+      </div>
+      <div class="hero-graphic" aria-hidden="true">
+        <div class="halo one"></div><div class="halo two"></div>
+        <div class="visual-card back"><span>RULE 01</span><strong>Income</strong><small>Above threshold</small><div class="visual-bars"><i></i><i></i><i></i><i></i><i></i></div></div>
+        <div class="visual-card front"><span>RULE 02</span><strong>Score</strong><small>Custom example scale</small><div class="visual-check">✓</div></div>
+      </div>
+    </section>
+
+    <div class="education-banner" role="note"><span class="banner-mark">!</span><p><strong>Educational tool — not a real loan application.</strong> These rules are simplified examples from the original Python project. A score of 1,000 is on a custom demo scale and is not a FICO, CIB or bank credit score. No lender uses this calculator to approve loans.</p></div>
+
+    <section id="calculator" class="calculator-section" aria-labelledby="section-title">
+      <div class="section-header"><div><div class="section-label">01 / INTERACTIVE TOOL</div><h2 id="section-title">Check the example criteria</h2><p>Two inputs. Transparent rules. A result you can understand.</p></div><span class="section-badge">NO ACCOUNT NEEDED</span></div>
+      <div class="app-grid">
+        <div class="form-panel">
+          <div class="panel-head"><span class="step-badge">1</span><div><h3>Enter your information</h3><p>Used only in this browser. Nothing is submitted to a server.</p></div></div>
+          <form id="eligibility-form" novalidate>
+            <div class="field">
+              <label for="income">Annual income <span class="required">*</span></label>
+              <div class="input-shell"><span class="currency-prefix">৳</span><input id="income" name="income" type="number" inputmode="decimal" placeholder="e.g. 1200000" min="0" max="1000000000000000" step="any" required></div>
+              <div class="field-help">Example currency: BDT · annual amount before deductions</div>
+            </div>
+            <div class="field">
+              <label for="score">Demo credit score <span class="required">*</span></label>
+              <div class="input-shell"><input id="score" name="score" type="number" inputmode="numeric" placeholder="e.g. 1100" min="0" max="2000" step="1" required><span class="input-suffix">/ 2000</span></div>
+              <div class="field-help">Custom teaching scale (0–2000), not an official credit score</div>
+            </div>
+            <p id="form-error" class="form-error" role="alert" aria-live="assertive"></p>
+            <button class="button calculate-button" type="submit">Evaluate demo criteria <span>↗</span></button>
+          </form>
+          <div class="secondary-actions"><button type="button" id="use-example">Use example values</button><button type="button" id="reset-form">Reset fields</button></div>
+          <div class="input-tip"><span>ⓘ</span><p>The original Python exercise checks <strong>income &gt; 1,000,000</strong> and <strong>demo score ≥ 1,000</strong>. Both conditions must be true.</p></div>
+        </div>
+
+        <aside class="result-panel" id="result-card" data-status="empty" aria-labelledby="result-heading">
+          <div class="result-overline"><span>RESULT / EXPLANATION</span><span class="instant-dot">● INSTANT</span></div>
+          <div class="status-orb" id="status-icon" aria-hidden="true">↗</div>
+          <div class="status-caption" id="result-label">READY WHEN YOU ARE</div>
+          <h3 id="result-title" aria-live="polite">Your assessment appears here</h3>
+          <p id="result-description" class="status-desc">Enter the values to see a detailed explanation of each sample rule.</p>
+          <div class="rules-list">
+            <div class="rules-heading">THE TWO PRACTICE RULES</div>
+            <div class="rule-row"><div class="rule-copy"><span class="rule-icon">01</span><div><strong>Annual income</strong><small>Strictly greater than ৳1,000,000</small></div></div><span id="income-rule" class="rule-status">Awaiting input</span></div>
+            <div class="rule-row"><div class="rule-copy"><span class="rule-icon">02</span><div><strong>Demo score</strong><small>At least 1,000 out of 2,000</small></div></div><span id="score-rule" class="rule-status">Awaiting input</span></div>
+          </div>
+          <div class="values-grid"><div><small>ENTERED INCOME</small><strong id="result-income">—</strong></div><div><small>ENTERED SCORE</small><strong id="result-score">—</strong></div></div>
+          <div class="result-actions"><button type="button" id="copy-result" class="button copy-button" disabled>Copy summary</button><button type="button" id="print-result" class="button print-button" disabled>Print</button></div>
+          <p class="fine-print">An educational rules check is not an affordability assessment, credit decision, financing offer, or guarantee.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="explainer-section">
+      <div class="section-header"><div><div class="section-label">02 / BEHIND THE LOGIC</div><h2>Simple by design</h2><p>Follow the same decision tree in the website or Python terminal.</p></div></div>
+      <div class="info-cards">
+        <article><div class="card-icon">01</div><h3>Check annual income</h3><p>The educational example requires an annual income greater than 1,000,000 BDT, not equal to it.</p></article>
+        <article><div class="card-icon">02</div><h3>Check demo score</h3><p>The custom practice score must be at least 1,000 on a made-up 0–2,000 scale, separate from real credit scoring.</p></article>
+        <article><div class="card-icon">03</div><h3>Combine the conditions</h3><p>Both requirements must be satisfied. The result is a demonstration of conditional logic, not an actual lending decision.</p></article>
+      </div>
+    </section>
+  </main>
+  <footer class="container footer"><div><strong>income<span class="brand-accent">.</span>credit</strong><span>Python + Cloudflare Workers</span></div><p>Open source · Client-side calculation · Not a financial institution</p></footer>
+  <noscript><div class="container"><p>JavaScript is required for the browser demo. The Python CLI still works in a terminal.</p></div></noscript>
+</body>
+</html>
